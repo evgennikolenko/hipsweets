@@ -25,6 +25,7 @@ gulp.task('server', function() {
     });
 });
 
+
 var path = {
     build: { // пути куда складывать
         html: 'build/',
@@ -110,16 +111,12 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js');
     });
-    // watch([path.watch.img], function(event, cb) {
-    //     gulp.start('image');
-    // });
+    watch([path.watch.img], function(event, cb) {
+        gulp.start('image');
+    });
     // watch([path.watch.fonts], function(event, cb) {
     //     gulp.start('fonts');
     // });
 });
 
 gulp.task('default', ['build', 'server', 'watch'], reload);
-
-// gulp.task('default', ['html','server'], function () {
-//     gulp.watch(['src/**/*.*'], reload);
-// });
