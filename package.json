@@ -1,0 +1,30 @@
+{
+  "name": "hipsweets",
+  "version": "1.0.0",
+  "description": "website baking and sweets",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evgennikolenko/hipsweets.git"
+  },
+  "keywords": [
+    "hipsweets",
+    "sweets",
+    "baking"
+  ],
+  "author": "Evgen Nikolenko",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-htmlclean": "^2.7.15",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "del": "^3.0.0"
+  }
+}

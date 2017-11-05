@@ -1,0 +1,47 @@
+@mixin containerMargin(){
+  max-width: $container;
+  height: auto;
+  margin: auto;
+}
+
+%clearfix {
+  *zoom: 1;
+  &:after {
+    content: '';
+    display: table;
+    line-height: 0;
+    clear: both;
+  }
+}
+
+//responsive
+@function rem($px) {
+  @return $px / 16px + 0rem;
+}
+
+@function proc($px) {
+  @return $px * 1% / 10.99px;
+}
+
+// Breakpoints for each query
+$smartphone: 480px;
+$tabletPortrait: 768px;
+$laptop: 992px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+
+
+@mixin respondTo($media) {
+  @if $media == smartphone {
+    @media (max-width: $smartphone) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $laptop) { @content; }
+  }
+  @else if $media == smallScreen {
+    @media (max-width: $desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+}

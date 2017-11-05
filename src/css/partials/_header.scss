@@ -1,0 +1,59 @@
+.body__wrapper {
+  width: 100%;
+  .head-sections {
+    height: 100vh;
+    width: 100%;
+
+    background: radial-gradient(circle at 30% 75%, #e34346, #a4161b, #a4161b 200%);
+
+    .container{
+      @include containerMargin();
+
+      .header{
+        width: 100%;
+        height: 150px;
+        position: relative;
+        background: yellow;
+
+        .header__inner {
+          width: inherit;
+          height: 100px;
+          position: absolute;
+          top: 50%;
+          margin-top: -50px;
+          background: green;
+
+          .header__logo{
+            width: proc(300px);
+            height: inherit;
+            position: relative;
+            background: deeppink;
+
+            .logo__image{
+              display: inline-block;
+              width: 27%;
+              height: 66px;
+              position: absolute;
+              top: 50%;
+              margin-top: -32px;
+              
+              background: url("../../img/logo.png");
+              background-size: auto;
+
+              &:hover{
+                rotation: 50deg;
+              }
+
+            }
+
+            .logo__name{
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
