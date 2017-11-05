@@ -36,7 +36,7 @@ var path = {
     },
     src: { // откуда брать
         html: 'src/*.html',
-        css: 'src/css/screen.scss',
+        css: 'src/css/main.scss',
         js: ['src/js/jquery.js', 'src/js/*.js'],
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
@@ -67,7 +67,7 @@ gulp.task('js', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('css', function () {
+gulp.task('style', function () {
     gulp.src(path.src.css)
         .pipe(sourcemaps.init())
         .pipe(scss())
@@ -96,7 +96,7 @@ gulp.task('clean', function() {
 gulp.task('build', [
     'html',
     'js',
-    'css',
+    'style',
     // 'fonts',
     'image'
 ]);
