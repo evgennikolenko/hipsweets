@@ -1,13 +1,19 @@
 .body__wrapper {
   width: 100%;
-  .head-sections {
-    height: 100vh;
-    width: 100%;
 
+  .head-sections {
+    height: 110vh;
+    width: 100%;
     background: radial-gradient(circle at 30% 75%, #e34346, #a4161b, #a4161b 200%);
 
     .container{
       @include containerMargin();
+      @include respondTo(smallScreen) {
+        max-width: 950px;
+      }
+      @include respondTo(tablet) {
+        max-width: 800px;
+      }
 
       .header{
         width: 100%;
@@ -23,11 +29,20 @@
           margin-top: -50px;
           background: green;
 
+          ////////////////// LOGO
           .header__logo{
-            width: proc(300px);
+            display: inline-block;
+            width: 300px;
             height: inherit;
             position: relative;
             background: deeppink;
+            @include respondTo(bigPhoneScreen) {
+              margin: auto;
+            }
+            @include respondTo(smartphone) {
+             width: 300px;
+            }
+
 
             .logo__image{
               display: inline-block;
@@ -37,22 +52,279 @@
               top: 50%;
               margin-top: -32px;
               
-              background: url("../../img/logo.png");
-              background-size: auto;
+              background: url("../../img/logo.png") no-repeat;
+              background-size: cover;
 
-              &:hover{
-                rotation: 50deg;
+              @include respondTo(tablet) {
+                width: 78px;
               }
 
+              @include respondTo(smartphone) {
+                width: 78px;
+                height: 65px;
+              }
             }
 
             .logo__name{
               display: inline-block;
+              position: absolute;
+              height: 60px;
+              top: 50%;
+              margin-top: -30px;
+              right: 0;
+
+              font-family: 'malinaregular', sans-serif;
+              font-size: 2.6rem;
+              color: #fca211;
+
+              @include respondTo(tablet) {
+                font-size: 3.3rem;
+              }
             }
           }
+          ////////////////////////// /LOGO
+
+          ////////////////////// lIST
+          .header__list{
+            display: inline-block;
+            position: relative;
+            width: proc(610px);
+            height: 60px;
+            top: -20%;
+
+            margin-left: 40px;
+            background: yellow;
+
+            @include respondTo(tablet) {
+              width: proc(600px);
+              margin-left: 10px;
+            }
+
+            @include respondTo(bigPhoneScreen) {
+              display: block;
+              margin: 50px auto;
+              width: 500px;
+            }
+
+            @include respondTo(smartphone) {
+              display: block;
+              width: 100%;
+              margin-left: 0;
+              margin-top: 50px;
+            }
+
+            .list__menu{
+              height: inherit;
+              max-width: 100%;
+
+              .menu__list{
+                display: inline-block;
+                position: relative;
+                height: inherit;
+                width: proc(274px);
+                background: rebeccapurple;
+
+                @include respondTo(bigPhoneScreen) {
+                  background: black;
+                }
+
+                @include respondTo(smartphone) {
+                  display: block;
+                  width: 100%;
+                }
+
+                .list__submenu{
+                  display: none;
+                  position: absolute;
+                  width: 145%;
+                  height: auto;
+
+                  margin-top: 60px;
+                  margin-left: -45px;
+                  padding-bottom: 20px;
+                  padding-top: 10px;
+                  background: rgba(255, 255, 255, 0.8);
+                  border-radius: 10px;
+                  overflow: hidden;
+
+                  @include respondTo(tablet) {
+                    width: 155%;
+                    margin-left: -35px;
+                  }
+
+                  @include respondTo(smartphone) {
+                    background: rgba(255, 255, 255, 0.8);
+                  }
+
+                  .submenu__list{
+                    width: 70%;
+                    height: 50px;
+                    margin: auto;
+
+                    .submenu__item {
+                      position: absolute;
+                      height: 30px;
+
+                      font-size: 16px;
+                      color: #575757;
+                      letter-spacing: 1px;
+                      text-align: center;
+                      margin-top: 17px;
+
+                      cursor: pointer;
+
+                      @include respondTo(tablet) {
+                        font-size: 14px;
+                      }
+
+                      &:hover{
+                        font-weight: 800;
+
+                        &:before{
+                          display: inline-block;
+                          position: absolute;
+                          content: "";
+                          height: 7px;
+                          width: 7px;
+                          border-right: 10px solid #fca211;
+                          border-bottom: 10px solid #fca211;
+                          transform: rotate(-50deg);
+                          margin-left: -43px;
+
+                          @include respondTo(tablet) {
+                            margin-left: -35px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                .menu__item{
+                  position: absolute;
+                  height: 30px;
+
+                  font-size: 1.2rem;
+                  color: #ffffff;
+                  letter-spacing: 1px;
+                  text-align: center;
+
+                  top: 50%;
+                  margin-top: -15px;
+                  margin-left: 15px;
+
+                  cursor: pointer;
+
+                  @include respondTo(tablet) {
+                    margin-top: -10px;
+                  }
+
+                  @include respondTo(smartphone) {
+                    font-size: 1.2rem;
+                    margin-left: 15%;
+                  }
+
+                  @include respondTo(bigPhoneScreen) {
+                    font-size: 1rem;
+                    margin-top: -10px;
+                  }
+
+                  &:after{
+                    display: inline-block;
+                    content: "";
+                    height: 7px;
+                    width: 7px;
+                    border-right: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    transform: rotate(45deg);
+                    margin-left: 10px;
+                    margin-bottom: 3px;
+
+                    @include respondTo(tablet) {
+                      height: 5px;
+                      width: 5px;
+                      margin-left: 6px;
+
+                    }
+                  }
+
+                  &:hover{
+                    color: #fca211;
+
+                    &:after{
+                      display: inline-block;
+                      content: "";
+                      height: 7px;
+                      width: 7px;
+                      border-right: 2px solid #fca211;
+                      border-bottom: 2px solid #fca211;
+                      transform: rotate(225deg);
+                      margin-left: 10px;
+                      margin-bottom: -1px;
+                    }
+                  }
+                }
+              }
+            }
+
+
+          }
+          //////////////////////////////////////// /LIST
+
+          ///////////////////////BUTTONS
+              .header__buttons{
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                height: 100px;
+                width: proc(150px);
+
+                @include respondTo(smartphone) {
+                  top:0;
+                }
+
+                @include respondTo(bigPhoneScreen) {
+                  top:0;
+                }
+
+                .button__login{
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+
+                  margin-top: 30px;
+                  margin-left: 25px;
+
+                  border-radius: 25px;
+                  background:rgba(173, 46, 51, 0.5) url("../../img/header/header-sprite.png") no-repeat;
+
+                  cursor: pointer;
+
+                  &:hover{
+                    background:#fca211 url("../../img/header/header-sprite.png") no-repeat;
+                  }
+
+                  @include respondTo(smallScreen) {
+                    float: right;
+                    margin-top: 20px;
+                    &:first-child{
+                      margin-top: 0;
+                    }
+                  }
+                }
+
+                .button__search{
+                @extend .button__login;
+                  background-position: 0 -40px;
+
+                  &:hover{
+                    background:#fca211 url("../../img/header/header-sprite.png") no-repeat 0 -40px;
+                  }
+                }
+              }
+          ///////////////////////BUTTONS
         }
       }
-
     }
   }
 }

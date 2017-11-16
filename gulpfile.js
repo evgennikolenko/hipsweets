@@ -89,6 +89,12 @@ gulp.task('image', function () {
         .pipe(reload({stream: true}));
 });
 
+gulp.task('fonts', function () {
+    gulp.src(path.src.fonts)
+        .pipe(gulp.dest(path.build.fonts))
+        .pipe(reload({stream: true}));
+});
+
 gulp.task('clean', function() {
     return del(['build']);
 });
@@ -97,7 +103,7 @@ gulp.task('build', [
     'html',
     'js',
     'style',
-    // 'fonts',
+    'fonts',
     'image'
 ]);
 

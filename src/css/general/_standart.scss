@@ -1,3 +1,29 @@
+html{
+  font-size: 16px;
+  overflow-x:  hidden;
+  @include respondTo(tablet) {
+    font-size: 12px;
+  }
+}
+*{
+  box-sizing: border-box;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
 
 $container: 1100px;
 $baseFont:"Helvetica", Helvetica, Arial, sans-serif;

@@ -1,0 +1,281 @@
+.slider{
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 25px;
+  background: yellowgreen;
+
+  @include respondTo(bigPhoneScreen) {
+    margin-top: 65px;
+  }
+  @include respondTo(smartphone) {
+    margin-top: 255px;
+  }
+
+  .slider__list{
+      position: relative;
+      height: inherit;
+      width: inherit;
+
+
+    .slider__item{
+          position: absolute;
+          width: inherit;
+          height: inherit;
+
+      .slider__ingredients{
+        position: relative;
+        max-width: 200px;
+        height: 150px;
+        top: 30px;
+        background: hotpink;
+
+        .ingredients__button{
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+
+          margin-top: 30px;
+          margin-left: 35px;
+
+          border-radius: 25px;
+          background:rgba(173, 46, 51, 0.5) url("../../img/slider/ingredients-sprite.png") no-repeat 0 -158px;
+
+          cursor: pointer;
+          &:hover{
+            background:#fca211 url("../../img/slider/ingredients-sprite.png") no-repeat 0 -197px;
+          }
+        }
+
+        .ingredients__text{
+          color: #ffffff;
+          font-size: 15px;
+          font-family: Arial, sans-serif;
+          letter-spacing: 0.5px;
+
+          margin-top: 10px;
+          margin-left: 5px;
+        }
+    }
+
+      .slider__image{
+        position: absolute;
+        display: block;
+        width: proc(500px);
+        height: 500px;
+
+        top: 50px;
+        left: 10%;
+        z-index: 1;
+
+        @include respondTo(smallScreen) {
+          height: 500px;
+        }
+        @include respondTo(tablet) {
+          height: 400px;
+          top: 100px;
+        }
+        @include respondTo(bigPhoneScreen) {
+          width: 400px;
+          height: 450px;
+          top:120px;
+          left: 4%;
+        }
+        @include respondTo(smartphone) {
+          width: 300px;
+          height: 320px;
+          top: 170px;
+          left: 10px;
+        }
+      }
+
+      .slider__backgroundImg{
+        position: absolute;
+        width: 80%;
+        height: 250px;
+
+        font-family: 'malinaregular', sans-serif;
+        font-size: 10rem;
+        color: rgba(255, 255, 255, 0.1);
+
+        @include respondTo(smallScreen) {
+          font-size: 8.8rem;
+        }
+        @include respondTo(tablet) {
+          font-size: 8.8rem;
+        }
+        @include respondTo(bigPhoneScreen) {
+          font-size: 5.5rem;
+        }
+        @include respondTo(smartphone) {
+          font-size: 5rem;
+          margin-top: 50px;
+        }
+      }
+
+      .slider__content{
+        position: absolute;
+        max-width: proc(500px);
+        right: 0;
+        top: 100px;
+
+        @include respondTo(smallScreen) {
+          top: 25px;
+        }
+
+        @include respondTo(bigPhoneScreen) {
+          width: 300px;
+          margin-right: 10px;
+        }
+
+        @include respondTo(smartphone) {
+          width: 300px;
+          margin-right: 10px
+        }
+
+        background: teal;
+
+        .slider__header{
+          width: auto;
+          padding-left: 50px;
+          margin: 0;
+
+          font-family:'malinaregular', sans-serif;
+          font-size: 65px;
+          color: #ffffff;
+
+          @include respondTo(tablet) {
+            padding-left: 45px
+          }
+
+          @include respondTo(bigPhoneScreen) {
+            font-size: 45px;
+            padding-left: 10px;
+          }
+          @include respondTo(smartphone) {
+            font-size: 35px;
+            padding-left: 10px;
+          }
+        }
+
+        .slider__text{
+
+          padding-left: 50px;
+          margin-top: 50px;
+          line-height: 25px;
+          letter-spacing: 0.6px;
+          font-family: $baseFont;
+          font-size: 1rem;
+          color: #ffffff;
+
+          @include respondTo(bigPhoneScreen) {
+            display: none;
+          }
+
+          @include respondTo(smartphone) {
+            display: none;
+          }
+        }
+
+        .slider__cost{
+          display: inline-block;
+          padding-left: 50px;
+          font-family:'malinaregular', sans-serif;
+          font-size: 50px;
+          color: #ffffff;
+
+          @include respondTo(bigPhoneScreen) {
+            font-size: 45px;
+            padding-left: 10px;
+          }
+        }
+
+        .slider__btn-book{
+          display: inline-block;
+          position: absolute;
+          width: 120px;
+          height: 50px;
+          padding: 15px 0 0 22px;
+          margin: 15px 0 0 50px;
+          letter-spacing: 0.6px;
+          color: #a4161b;
+          background: #fca211;
+          font-family: $baseFont;
+          font-size: 1.1rem;
+          border-radius: 25px;
+
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.5s;
+
+          @include respondTo(smallScreen) {
+            font-size: 16px;
+          }
+          @include respondTo(tablet) {
+            margin: 10px 0 0 30px;
+          }
+          @include respondTo(bigPhoneScreen) {
+            width: 100px;
+            margin: 10px 0 0 10px;
+            padding-left: 15px;
+          }
+          @include respondTo(smartphone) {
+            width: 100px;
+            margin: 150px 0 0 -50px;
+            padding-left: 15px;
+            -webkit-transform: rotate(90deg); transform: rotate(90deg);
+
+          }
+
+          &:hover{
+            background-color: #641a00;
+            color: #fca211;
+            cursor: pointer;
+
+          }
+        }
+      }
+    }
+  }
+
+.slider__controls{
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  bottom: 0 ;
+
+
+  .cntrl__but{
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+
+    &:hover:before{
+    color: rgba(252, 162, 17, 0.6);
+    }
+
+    &:before{
+      color: #fca211;
+      /* top: 0; */
+      left: 0;
+      content: '\2022';
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      color: #fff;
+      opacity: 1;
+      line-height: 14px;
+      font-size: 32px;
+    }
+  }
+
+  .cntrl__but--activ:before{
+    color: #fca211;
+    }
+  }
+}

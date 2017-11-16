@@ -35,8 +35,11 @@ $largeScreen: 1400px;
   @if $media == smartphone {
     @media (max-width: $smartphone) { @content; }
   }
+  @else if $media == bigPhoneScreen {
+    @media (min-width: $smartphone) and (max-width: $tabletPortrait + 100px) { @content; }
+  }
   @else if $media == tablet {
-    @media (min-width: $tabletPortrait) and (max-width: $laptop) { @content; }
+    @media (min-width: $tabletPortrait - 100px) and (max-width: $laptop) { @content; }
   }
   @else if $media == smallScreen {
     @media (max-width: $desktop) { @content; }
