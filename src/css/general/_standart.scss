@@ -1,12 +1,11 @@
 html{
   font-size: 16px;
+  box-sizing: border-box;
+
   overflow-x:  hidden;
   @include respondTo(tablet) {
     font-size: 12px;
   }
-}
-*{
-  box-sizing: border-box;
 }
 
 ul{
